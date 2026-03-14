@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Applications</title>
+</head>
+<body>
+
+<h1>My Applications</h1>
+
+{% if applications %}
+    {% for app in applications %}
+        <div>
+            <h3>{{ app.job.title }}</h3>
+            <p><strong>Company:</strong> {{ app.job.company.name }}</p>
+            <p><strong>Location:</strong> {{ app.job.location }}</p>
+            <p><strong>Applied on:</strong> {{ app.applied_at }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>You haven’t applied to any jobs yet.</p>
+{% endif %}
+
+<a href="{% url 'job_list' %}">⬅ Back to Job List</a>
+
+</body>
+</html>
+
+<td>
+    {% if application.status == "Pending" %}
+        <span style="color:black; background-color:yellow; padding:5px; border-radius:5px;">
+            Pending
+        </span>
+
+    {% elif application.status == "Accepted" %}
+        <span style="color:white; background-color:green; padding:5px; border-radius:5px;">
+            Accepted
+        </span>
+
+    {% elif application.status == "Rejected" %}
+        <span style="color:white; background-color:red; padding:5px; border-radius:5px;">
+            Rejected
+        </span>
+    {% endif %}
+</td>

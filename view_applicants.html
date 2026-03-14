@@ -1,0 +1,16 @@
+<h2>Applicants</h2>
+
+{% for app in applications %}
+    <p>{{ app.user.username }}</p>
+    <p>Status: {{ app.status }}</p>
+
+    <a href="{% url 'update_status' app.id 'Accepted' %}">
+        Accept
+    </a>
+
+    <a href="{% url 'update_status' app.id 'Rejected' %}">
+        Reject
+    </a>
+
+    <hr>
+{% endfor %}

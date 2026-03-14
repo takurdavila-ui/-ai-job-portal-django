@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Available Jobs</h2>
+
+<form method="GET">
+    <input type="text" name="location" placeholder="Search Location">
+    <button type="submit">Search</button>
+</form>
+
+{% for job in jobs %}
+    <a href="{% url 'job_detail' job.id %}">
+        <p>{{ job.title }}</p>
+    </a>
+{% endfor %}
+
+{% endblock %}
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'my_applications' %}">My Applications</a> |
+    <a href="{% url 'post_job' %}">Post a Job</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+
+<hr>
+
+<h2>Available Jobs</h2>
+
+<!-- Search + Filter Form -->
+<form method="get">
+    <input type="text" name="q" placeholder="Search by title or location">
+
+    <select name="company">
+        <option value="">All Companies</option>
+        {% for company in companies %}
+            <option value="{{ company.id }}">{{ company.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+{% if messages %}
+    {% for message in messages %}
+        <p style="color: green;">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% for job in jobs %}
+    <div>
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.company.name }} - {{ job.location }}</p>
+        <p>{{ job.description }}</p>
+
+        <a href="{% url 'job_detail' job.id %}">View Details</a> |
+        <a href="{% url 'apply_job' job.id %}">Apply</a>
+        <hr>
+    </div>
+{% empty %}
+    <p>No jobs posted yet.</p>
+{% endfor %}
+
+<a href="{% url 'job_detail' job.id %}">
+    {{ job.title }}
+</a>
+
+{% if messages %}
+    {% for message in messages %}
+        <div style="padding:10px; margin:10px; background:#d4edda;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
