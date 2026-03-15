@@ -109,20 +109,32 @@ Candidate skills are compared with job required skills
 
 Top matching jobs are displayed in Recommended Jobs page
 
+#Screenshorts
+-Home Page
+-Job Listing Page
+-Job Detail Page
+-Apply Job Page
+-My Applications Page
+-Employer Dashboard
+-View Applicants
+-Accept / Reject Application
+-Admin Panel
+-AI Recommended Jobs Page 
+
 #Future Improvements
-Resume download option for employers
+-Resume download option for employers
 
-Pagination for job listings
+-Pagination for job listings
 
-Mobile responsive UI
+-Mobile responsive UI
 
-Saved jobs feature
+-Saved jobs feature
 
-Advanced AI recommendations using machine learning
+-Advanced AI recommendations using machine learning
 
-LinkedIn/Naukri-like suggested jobs and notifications
+-LinkedIn/Naukri-like suggested jobs and notifications
 
-Author
+#Author
 
 Devisri Thakur
 
