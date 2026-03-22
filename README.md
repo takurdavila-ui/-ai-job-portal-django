@@ -1,149 +1,97 @@
-# AI-Powered Job Portal (Django)
+AI-Powered Job Portal (Django)
 
-A full-stack **Job Portal Web Application** built using Django and Python, featuring an **AI-based job recommendation system** that suggests jobs to candidates based on their skills. The portal supports **candidates, employers, and admin functionalities**.
+A full-stack Job Portal Web Application built using Django and Python, featuring an AI-based Job Recommendation System that intelligently suggests jobs based on candidate skills.
 
----
-
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Future Improvements](#future-improvements)
-- [Author](#author)
-
----
-
-## Features
-
-### Candidate Features
-- User authentication (Login / Logout)
-- Browse jobs with **search** and **location filter**
-- View job details
-- Apply to jobs with **resume upload**
-- Prevent duplicate applications
-- View applied jobs (**My Applications**)
-- **AI Recommended Jobs** based on user skills
-- Save jobs for later (future feature)
-
-### Employer Features
-- Employer login and authentication
-- Post new jobs
-- View jobs posted
-- View applicants per job
-- Accept / Reject applications
-- Dashboard showing **applicant count per job**
-
-### Admin Features
-- Manage **users, companies, jobs, applications, profiles**
-- Full CRUD operations for jobs and companies
-
----
-
-## Technologies Used
-
-- **Backend:** Python, Django
-- **Frontend:** HTML, CSS, Django Templates
-- **Database:** SQLite
-- **AI/ML Feature:** TF-IDF + Cosine Similarity for job recommendation (`scikit-learn`)
-- **File Uploads:** Resume uploads via Django FileField
-
----
-
-## Installation
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/<your-username>/ai-job-portal.git
-cd ai-job-portal
-
-# Clone repo
-git clone https://github.com/<username>/ai-job-portal.git
-cd ai-job-portal
+🔥 Key Highlights
+🤖 AI-powered job recommendations (TF-IDF + Cosine Similarity)
+👨‍💼 Separate dashboards for Candidates & Employers
+📄 Resume upload & application tracking
+📊 Employer analytics (applicant count per job)
+🔐 Secure authentication system
+🛠️ Tech Stack
+Backend: Python, Django
+Frontend: HTML, CSS, Django Templates
+Database: SQLite
+AI Model: TF-IDF + Cosine Similarity (scikit-learn)
+Others: File Upload (Resume Handling)
+✨ Features
+👩‍💻 Candidate
+Login / Logout authentication
+Search jobs with filters
+Apply with resume upload
+View applied jobs
+🤖 AI Recommended Jobs
+🧑‍💼 Employer
+Post and manage jobs
+View applicants
+Accept / Reject applications
+Dashboard analytics
+🛡️ Admin
+Manage users, jobs, companies
+Full CRUD operations
+⚙️ Installation & Setup
+# Clone repository
+git clone https://github.com/takurdavila-ui/ai-job-portal-django.git
+cd ai-job-portal-django
 
 # Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# Windows PowerShell
-venv\Scripts\Activate.ps1
-# Linux / Mac
+# Activate environment
+# Windows
+venv\Scripts\activate
+# Mac/Linux
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Run migrations
-python manage.py makemigrations
 python manage.py migrate
 
-# Create superuser
+# Create admin
 python manage.py createsuperuser
 
 # Run server
 python manage.py runserver
 
-#Admin Panel
-Access via: http://127.0.0.1:8000/admin/
+👉 Open: http://127.0.0.1:8000/
 
-Add Companies, Jobs, and User Profiles (skills).
+🤖 AI Recommendation Logic
+Extract candidate skills
+Compare with job requirements
+Use TF-IDF + Cosine Similarity
+Rank jobs based on similarity score
+📸 Screenshots
 
-#Candidate
+![Home](home.png)
+![Admin](admin.png)
+![job apply](jobapply.png)
+![applicatns](applicants.png)
+![Administration](administration.png)
 
-Login → Browse jobs → Apply → View recommended jobs
 
-Recommended jobs are generated using TF-IDF similarity between candidate skills and job skills.
+🚧 Future Improvements
 
-#Employer
+📥 Resume download option
 
-Login → Post jobs → View applicants → Accept/Reject applications
+📱 Mobile responsive UI
 
-Dashboard shows number of applicants per job.
+⭐ Saved jobs feature
 
-#AI Recommended Jobs
+🔔 Notifications system
 
-Candidate skills are compared with job required skills
+🧠 Advanced ML/DL recommendations
 
-Top matching jobs are displayed in Recommended Jobs page
-
-#Screenshorts
--Home Page
--Job Listing Page
--Job Detail Page
--Apply Job Page
--My Applications Page
--Employer Dashboard
--View Applicants
--Accept / Reject Application
--Admin Panel
--AI Recommended Jobs Page 
-
-#Future Improvements
--Resume download option for employers
-
--Pagination for job listings
-
--Mobile responsive UI
-
--Saved jobs feature
-
--Advanced AI recommendations using machine learning
-
--LinkedIn/Naukri-like suggested jobs and notifications
-
-#Author
+👩‍🎓 Author
 
 Devisri Thakur
-
 BTech Student | AI & Web Development Enthusiast
 
-Email: [takurdavila@gmail.com]
+📧 Email: takurdavila@gmail.com
 
-GitHub: https:https://github.com/takurdavila-ui
+🔗 GitHub: https://github.com/takurdavila-ui
 
-## License
+📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License
